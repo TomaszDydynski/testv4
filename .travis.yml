@@ -1,0 +1,14 @@
+# Sample .travis.yml file:
+language: java
+
+rvm: # the Ruby versions to be used
+  - 3.4.0
+jdk:
+  - oraclejdk8
+  
+before_install:
+  - sudo apt-get install ruby
+  - gem install selenium-webdriver
+  - sudo apt-get install ant-junit
+
+script: ant Tests
